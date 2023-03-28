@@ -4,6 +4,7 @@
   "main": "app.js",
   "license": "MIT",
   "private": false,
+  "type": "module",
   "scripts": {
     "start": "node dist/app.js",
     "dev": "tsx watch app.ts",
