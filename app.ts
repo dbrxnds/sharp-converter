@@ -77,7 +77,11 @@ app.get("/", async (req, res) => {
     res.contentType(`image/${queryParams.outputType}`);
     res.send(constrainedImage);
   } catch (error) {
-    res.status(500).send(error?.message || "Unknown error");
+    if (error instanceof Error) {
+      res.status(500).send(error.message);
+    }
+
+    res.status(500).send("Unknown error");
   }
 });
 
